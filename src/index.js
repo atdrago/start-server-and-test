@@ -113,6 +113,8 @@ const runTheTests = testCommand => () => {
  * runs a service, then goes to the next list, until it reaches 1 service and runs test.
  */
 function startAndTest ({ services, test }) {
+  console.log('STARTING TESTSSS')
+
   if (services.length === 0) {
     throw new Error('Got zero services to start ...')
   }
