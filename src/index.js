@@ -33,6 +33,8 @@ function waitAndRun ({ start, url, runFn }) {
 
   debug('starting server with command "%s", verbose mode?', start, isDebug())
 
+  console.log('starting server with scriptTTT', start)
+
   const server = execa(start, { shell: true, stdio: 'inherit' })
   let serverStopped
 
@@ -84,6 +86,8 @@ function waitAndRun ({ start, url, runFn }) {
       log: isDebug()
     }
     debug('wait-on options %o', options)
+
+    console.log('starting wait-on with options', url, JSON.stringify(options))
 
     waitOn(options, err => {
       if (err) {
