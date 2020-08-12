@@ -65,8 +65,8 @@ function waitAndRun ({ start, url, runFn }) {
   }
 
   const waited = new Promise((resolve, reject) => {
-    const onClose = err => {
-      console.log('Error:', err)
+    const onClose = (...args) => {
+      console.log('Error:', ...args)
 
       reject(new Error('server closed unexpectedly'))
     }
